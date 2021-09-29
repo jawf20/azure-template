@@ -299,6 +299,7 @@
       }
     },
     {
+      "condition": "[equals(parameters('sshPortOpen'), 'yes')]",
       "apiVersion": "2019-11-01",
       "type": "Microsoft.Network/networkSecurityGroups",
       "name": "[variables('securityGroupName')]",
