@@ -33,6 +33,17 @@
         "description": "SSH key for the Virtual Machine."
       }
     },
+    "sshPortOpen": {
+      "type": "string",
+      "defaultValue": "no",
+      "allowedValues": [
+        "yes",
+        "no"
+      ],
+      "metadata": {
+        "description": "SSH Port open for the Virtual Machine"
+      }
+    },
     "grafanaAdminPassword": {
       "type": "securestring",
       "metadata": {
@@ -284,6 +295,7 @@
       "properties": {
         "securityRules": [
           {
+            "condition": "[equals(parameters('sshPortOpen'), 'yes')]",
             "name": "SSH",
             "properties": {
               "description": "Allows inbound SSH traffic.",
