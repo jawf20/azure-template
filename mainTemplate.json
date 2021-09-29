@@ -41,7 +41,18 @@
         "no"
       ],
       "metadata": {
-        "description": "SSH Port open for the Virtual Machine"
+        "description": "SSH Port (22) open for the Virtual Machine"
+      }
+    },
+    "grafanaPortOpen": {
+      "type": "string",
+      "defaultValue": "no",
+      "allowedValues": [
+        "yes",
+        "no"
+      ],
+      "metadata": {
+        "description": "Grafana Port (3000) open for the Virtual Machine"
       }
     },
     "grafanaAdminPassword": {
@@ -312,6 +323,7 @@
           {
             "name": "Grafana",
             "properties": {
+              "condition": "[equals(parameters('grafanaPortOpen'), 'yes')]",
               "description": "Allows inbound Grafana HTTP traffic.",
               "protocol": "Tcp",
               "sourcePortRange": "*",
