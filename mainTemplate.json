@@ -416,9 +416,6 @@
             "type": "CustomScript",
             "typeHandlerVersion": "2.1",
             "autoUpgradeMinorVersion": true,
-            "settings": {
-              "fileUris": "[variables('installScripts')]"
-            },
             "protectedSettings": {
               "commandToExecute": "[concat('bash install-grafana.sh ', variables('installOpts'))]"
             }
