@@ -23,6 +23,8 @@ help()
 # Parameters
 ADMIN_PWD="admin"
 
+echo "123"
+
 #Loop through options passed
 while getopts :A:V::h optname; do
   log "Option $optname set"
